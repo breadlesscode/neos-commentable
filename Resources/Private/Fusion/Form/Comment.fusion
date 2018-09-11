@@ -1,25 +1,20 @@
-
-
-prototype(Neos.NodeTypes:Form) {
-    presetName = 'fusion'
-}
 prototype(Breadlesscode.Commentable:Form.Comment) < prototype(Neos.Form.Builder:Form) {
     @context.commentableNode = ${ documentNode }
-    presetName = 'fusion'
 
     firstPage {
         elements {
             name = Neos.Form.Builder:SingleLineText.Definition {
-                label = 'Name'
+                label = ${ Translation.translate('Breadlesscode.Commentable:Form.Comment:name.label') }
             }
             email = Neos.Form.Builder:SingleLineText.Definition {
-                label = 'E-Mail'
+                label = ${ Translation.translate('Breadlesscode.Commentable:Form.Comment:email.label') }
             }
             message = Neos.Form.Builder:MultiLineText.Definition {
-                label = 'Message'
+                label = ${ Translation.translate('Breadlesscode.Commentable:Form.Comment:content.label') }
             }
         }
     }
+
     finishers {
         addComment = Breadlesscode.Commentable:From.Finisher.AddComment.Definition {
             options {
@@ -28,6 +23,14 @@ prototype(Breadlesscode.Commentable:Form.Comment) < prototype(Neos.Form.Builder:
                 content = '{message}'
                 node = ${ commentableNode }
             }
+        }
+    }
+
+    @cache {
+        context {
+            1 = 'none'
+            2 = 'documentNode'
+            3 = 'commentableNode'
         }
     }
 }

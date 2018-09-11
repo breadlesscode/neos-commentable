@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Breadlesscode\\Blog\\": "Classes/"
+            "Breadlesscode\\Commentable\\": "Classes/"
         }
     },
     "extra": {

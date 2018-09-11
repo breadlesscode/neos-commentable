@@ -1,0 +1,7 @@
+Neos:
+  Form:
+    presets:
+      'default':
+        finisherPresets:
+          'Breadlesscode.Commentable:From.Finisher.AddComment':
+            implementationClassName: 'Breadlesscode\Commentable\Form\Finisher\AddCommentFormFinisher'

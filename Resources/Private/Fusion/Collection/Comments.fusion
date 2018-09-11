@@ -1,0 +1,3 @@
+prototype(Breadlesscode.Commentable:Collection.Comment) < prototype(Neos.Neos:ContentCollection) {
+    nodePath = 'comments'
+}

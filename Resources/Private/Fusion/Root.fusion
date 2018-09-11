@@ -1,0 +1,10 @@
+include: Component/**/*.fusion
+include: Collection/**/*.fusion
+include: Form/**/*.fusion
+include: Content/**/*.fusion
+
+#####
+#
+# Thanks for using this package :)
+#
+#####
