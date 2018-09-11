@@ -1,0 +1,11 @@
+'Breadlesscode.Commentable:Collection.Comments':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  label: '${ I18n.translate(node.nodeType.label) }'
+  ui:
+    icon: 'icon-comments'
+    label: 'Comments'
+  constraints:
+    nodeTypes:
+      '*': false
+      'Breadlesscode.Commentable:Content.Comment': true

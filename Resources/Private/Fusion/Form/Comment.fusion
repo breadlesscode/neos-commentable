@@ -1,0 +1,33 @@
+
+
+prototype(Neos.NodeTypes:Form) {
+    presetName = 'fusion'
+}
+prototype(Breadlesscode.Commentable:Form.Comment) < prototype(Neos.Form.Builder:Form) {
+    @context.commentableNode = ${ documentNode }
+    presetName = 'fusion'
+
+    firstPage {
+        elements {
+            name = Neos.Form.Builder:SingleLineText.Definition {
+                label = 'Name'
+            }
+            email = Neos.Form.Builder:SingleLineText.Definition {
+                label = 'E-Mail'
+            }
+            message = Neos.Form.Builder:MultiLineText.Definition {
+                label = 'Message'
+            }
+        }
+    }
+    finishers {
+        addComment = Breadlesscode.Commentable:From.Finisher.AddComment.Definition {
+            options {
+                email = '{email}'
+                name = '{name}'
+                content = '{message}'
+                node = ${ commentableNode }
+            }
+        }
+    }
+}

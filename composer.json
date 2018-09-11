@@ -1,0 +1,20 @@
+{
+    "description": "Neos CMS plugin for commenting nodes",
+    "type": "neos-plugin",
+    "name": "breadlesscode/neos-commentable",
+    "require": {
+        "neos/flow": "*",
+        "neos/neos": "~4.0",
+        "neos/form-builder": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Breadlesscode\\Blog\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Breadlesscode.Commentable"
+        }
+    }
+}
