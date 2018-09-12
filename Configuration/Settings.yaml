@@ -1,12 +1,3 @@
-Neos:
-  Neos:
-    userInterface:
-      translation:
-        autoInclude:
-          'Breadlesscode.Commentable':
-            - 'NodeTypes/Collection/*'
-            - 'NodeTypes/Content/*'
-            - 'NodeTypes/Mixin/*'
-    fusion:
-      autoInclude:
-        Breadlesscode.Commentable: true
+Breadlesscode:
+  Commentable:
+    addToTop: true

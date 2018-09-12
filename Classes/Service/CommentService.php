@@ -28,6 +28,12 @@ class CommentService
     protected $contextFactory;
 
     /**
+     * @Flow\InjectConfiguration(path="addToTop")
+     * @var ContextFactoryInterface
+     */
+    protected $addCommentToTop;
+
+    /**
      * @Flow\Inject()
      * @var NodeTypeManager
      */
@@ -53,6 +59,11 @@ class CommentService
         $commentNode->setProperty('content', $comment->getContent());
         $commentNode->setProperty('createdAt', $comment->getCreatedAt());
         $commentNode->setHidden($comment->isHidden());
+
+        if ($this->addCommentToTop) {
+            $firstComment = $commentCollection->getChildNodes(null, 1);
+            $commentNode->moveBefore($firstComment[0]);
+        }
 
         return $commentNode;
     }
