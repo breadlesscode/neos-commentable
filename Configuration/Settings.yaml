@@ -1,3 +1,6 @@
 Breadlesscode:
   Commentable:
+    # should the comment be added to the top?
     addToTop: true
+    # should comments be hidden by default
+    hidden: true

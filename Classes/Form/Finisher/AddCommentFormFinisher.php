@@ -16,6 +16,12 @@ class AddCommentFormFinisher extends AbstractFinisher
     protected $commentService;
 
     /**
+     * @var bool
+     * @Flow\InjectConfiguration(path="hidden")
+     */
+    protected $defaultHidden;
+
+    /**
      * this finisher adds a comment to a given node
      */
     protected function executeInternal()
@@ -42,7 +48,7 @@ class AddCommentFormFinisher extends AbstractFinisher
         $comment->setName($this->parseOption('name'));
         $comment->setEmail($this->parseOption('email'));
         $comment->setContent($this->parseOption('content'));
-        $comment->setIsHidden(true);
+        $comment->setIsHidden($this->defaultHidden);
 
         return $comment;
     }
