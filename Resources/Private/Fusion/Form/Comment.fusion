@@ -5,12 +5,25 @@ prototype(Breadlesscode.Commentable:Form.Comment) < prototype(Neos.Form.Builder:
         elements {
             name = Neos.Form.Builder:SingleLineText.Definition {
                 label = ${ Translation.translate('Breadlesscode.Commentable:Form.Comment:name.label') }
+                validators {
+                    notEmpty = Neos.Form.Builder:StringLengthValidator.Definition {
+                        options.minimum = 2
+                    }
+                }
             }
             email = Neos.Form.Builder:SingleLineText.Definition {
                 label = ${ Translation.translate('Breadlesscode.Commentable:Form.Comment:email.label') }
+                validators {
+                    isEmail = Neos.Form.Builder:EmailAddressValidator.Definition
+                }
             }
             message = Neos.Form.Builder:MultiLineText.Definition {
                 label = ${ Translation.translate('Breadlesscode.Commentable:Form.Comment:content.label') }
+                validators {
+                    mimumumStringLength = Neos.Form.Builder:StringLengthValidator.Definition {
+                        options.minimum = 8
+                    }
+                }
             }
         }
     }
