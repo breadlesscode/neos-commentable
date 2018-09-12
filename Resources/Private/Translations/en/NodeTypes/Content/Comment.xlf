@@ -5,6 +5,18 @@
             <trans-unit id="ui.label" xml:space="preserve">
                 <source>Comment</source>
             </trans-unit>
+            <trans-unit id="properties.email" xml:space="preserve">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="properties.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="properties.createdAt" xml:space="preserve">
+                <source>Created at</source>
+            </trans-unit>
+            <trans-unit id="groups.comment" xml:space="preserve">
+                <source>Comment</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
