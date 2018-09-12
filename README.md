@@ -17,7 +17,45 @@ composer require breadlesscode/neos-commentable --no-update
 The --no-update command prevent the automatic update of the dependencies. After the package was added to your theme composer.json, go back to the root of the Neos installation and run composer update. Your desired package is now installed correctly.
 
 ## Usage
-Coming soon
+
+### 1. Extend your document
+You have to add the mixin `Breadlesscode.Commentable:Mixin.Commentable` to your commentable node. This mixin in simply
+adds a child node where the comments are stored.
+
+### 2. Render the comments
+Now you can add a the `Breadlesscode.Commentable:Collection.Comment` Fusion-Prototype to your node. This is a simple 
+`Neos.Neos:ContentCollection` which lists the comments.
+
+### 3. Add the form
+This Package provides a simple form implementation `Breadlesscode.Commentable:Form.Comment`. This form adds the comment
+to the current document node comment collection. You can simply add a finisher by extend the Fusion-Prototype:
+
+```neosfusion
+prototype(Breadlesscode.Commentable:Form.Comment) {
+    finishers {
+        sayThankYou = Neos.Form.Builder:FlashMessageFinisher.Definition {
+            options {
+                messageTitle = 'Thank you!'
+                messageBody = 'Thanks for your comment'
+            }
+        }
+    }
+}
+``` 
+ 
+If you want to use your own Form implementation, you should add the correct finisher
+`Breadlesscode.Commentable:From.Finisher.AddComment`. 
+
+## Configuration
+
+```yaml
+Breadlesscode:
+  Commentable:
+    # should the comment be added to the top?
+    addToTop: true
+    # should comments be hidden by default
+    hidden: true
+```
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
