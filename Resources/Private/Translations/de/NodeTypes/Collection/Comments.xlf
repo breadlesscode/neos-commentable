@@ -3,7 +3,8 @@
     <file original="" product-name="Breadlesscode.Commentable" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="ui.label" xml:space="preserve">
-                <source>Kommentare</source>
+                <source>Comments</source>
+                <target xml:lang="de">Kommentare</target>
             </trans-unit>
         </body>
     </file>

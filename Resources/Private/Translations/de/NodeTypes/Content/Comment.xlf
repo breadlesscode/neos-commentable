@@ -3,16 +3,20 @@
     <file original="" product-name="Breadlesscode.Commentable" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="ui.label" xml:space="preserve">
-                <source>Kommentar</source>
+                <source>Comment</source>
+                <target xml:lang="de">Kommentar</target>
             </trans-unit>
             <trans-unit id="properties.email" xml:space="preserve">
-                <source>E-Mailadresse</source>
+                <source>Email</source>
+                <target xml:lang="de">E-Mailadresse</target>
             </trans-unit>
             <trans-unit id="properties.name" xml:space="preserve">
                 <source>Name</source>
+                <target xml:lang="de">Name</target>
             </trans-unit>
             <trans-unit id="properties.createdAt" xml:space="preserve">
-                <source>Erstellt am</source>
+                <source>Created at</source>
+                <target xml:lang="de">Erstellt am</target>
             </trans-unit>
         </body>
     </file>
