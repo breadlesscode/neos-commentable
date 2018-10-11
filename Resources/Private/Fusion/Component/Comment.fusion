@@ -16,7 +16,7 @@ prototype(Breadlesscode.Commentable:Component.Comment) < prototype(Neos.Fusion:C
             }
             createdAt = Neos.Fusion:Tag {
                 tagName = 'p'
-                content = ${ 'Created at: ' + Date.format(props.createdAt, 'd.m.Y H:i') }
+                content = ${ Translation.translate('Breadlesscode.Commentable:NodeTypes.Content.Comment:properties.createdAt') + ': ' + Date.format(props.createdAt, 'd.m.Y H:i') }
             }
         }
         attributes.class = 'comment'
