@@ -52,4 +52,12 @@ class AddCommentFormFinisher extends AbstractFinisher
 
         return $comment;
     }
+    
+    /**
+     * @return mixed
+     */
+    public function getOption($optionName)
+    {
+        return $this->parseOption($optionName);   
+    }
 }
