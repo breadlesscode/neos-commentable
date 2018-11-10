@@ -1,7 +1,7 @@
 <?php
 namespace Breadlesscode\Commentable\Form\Finisher;
 
-use Breadlesscode\Commentable\Dto\CommentDto;
+use Breadlesscode\Commentable\Dto\CommentDtoInterface;
 use Breadlesscode\Commentable\Exception\InvalidNodeTypeException;
 use Breadlesscode\Commentable\Service\CommentService;
 use Neos\Form\Core\Model\AbstractFinisher;
@@ -9,6 +9,12 @@ use Neos\Flow\Annotations as Flow;
 
 class AddCommentFormFinisher extends AbstractFinisher
 {
+    /**
+     * @var \Neos\Flow\ObjectManagement\ObjectManagerInterface
+     * @Flow\Inject()
+     */
+    protected $objectManager;
+
     /**
      * @var CommentService
      * @Flow\Inject()
@@ -40,11 +46,11 @@ class AddCommentFormFinisher extends AbstractFinisher
     }
 
     /**
-     * @return CommentDto
+     * @return CommentDtoInterface
      */
-    protected function getCommentDto(): CommentDto
+    protected function getCommentDto(): CommentDtoInterface
     {
-        $comment = new CommentDto();
+        $comment = $this->objectManager->get(CommentDtoInterface::class);
         $comment->setName($this->parseOption('name'));
         $comment->setEmail($this->parseOption('email'));
         $comment->setContent($this->parseOption('content'));
@@ -52,12 +58,12 @@ class AddCommentFormFinisher extends AbstractFinisher
 
         return $comment;
     }
-    
+
     /**
      * @return mixed
      */
     public function getOption($optionName)
     {
-        return $this->parseOption($optionName);   
+        return $this->parseOption($optionName);
     }
 }

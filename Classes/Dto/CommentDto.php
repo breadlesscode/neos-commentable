@@ -1,7 +1,7 @@
 <?php
 namespace Breadlesscode\Commentable\Dto;
 
-class CommentDto
+class CommentDto implements CommentDtoInterface
 {
     /**
      * @var string

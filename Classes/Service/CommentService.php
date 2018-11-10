@@ -1,7 +1,7 @@
 <?php
 namespace Breadlesscode\Commentable\Service;
 
-use Breadlesscode\Commentable\Dto\CommentDto;
+use Breadlesscode\Commentable\Dto\CommentDtoInterface;
 use Breadlesscode\Commentable\Exception\InvalidNodeTypeException;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\ContentRepository\Domain\Model\NodeTemplate;
@@ -43,11 +43,11 @@ class CommentService
      * creates a comment node from the CommentDto
      *
      * @param NodeInterface $commentCollection
-     * @param CommentDto $comment
+     * @param CommentDtoInterface $comment
      * @return NodeInterface
      * @throws \Neos\ContentRepository\Exception\NodeTypeNotFoundException
      */
-    protected function createNode(NodeInterface $commentCollection, CommentDto $comment): NodeInterface
+    protected function createNode(NodeInterface $commentCollection, CommentDtoInterface $comment): NodeInterface
     {
         $commentNodeType = $this->nodeTypeManager->getNodeType(self::COMMENT_NODE_TYPE);
         $commentNodeTemplate = new NodeTemplate();
@@ -72,11 +72,11 @@ class CommentService
      * adds a comment node to a blog post node
      *
      * @param NodeInterface $commentableNode
-     * @param CommentDto $comment
+     * @param CommentDtoInterface $comment
      * @throws InvalidNodeTypeException
      * @throws \Neos\ContentRepository\Exception\NodeTypeNotFoundException
      */
-    public function addComment(NodeInterface $commentableNode, CommentDto $comment)
+    public function addComment(NodeInterface $commentableNode, CommentDtoInterface $comment)
     {
         if (!$this->isCommentableNode($commentableNode)) {
             throw new InvalidNodeTypeException('The commentable node type should implement the mixin '.self::COMMENTABLE_NODE_TYPE, 1536244558);
