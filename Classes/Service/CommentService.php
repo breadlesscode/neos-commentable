@@ -62,7 +62,10 @@ class CommentService
 
         if ($this->addCommentToTop) {
             $firstComment = $commentCollection->getChildNodes(null, 1);
-            $commentNode->moveBefore($firstComment[0]);
+            
+            if ($firstComment) {
+                $commentNode->moveBefore($firstComment[0]);
+            }
         }
 
         return $commentNode;
