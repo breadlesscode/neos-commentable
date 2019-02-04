@@ -1,5 +1,5 @@
 
-prototype(Breadlesscode.Commentable:From.Finisher.AddComment.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
+prototype(Breadlesscode.Commentable:Form.Finisher.AddComment.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
     options {
         // form values
         email = ''
@@ -11,3 +11,5 @@ prototype(Breadlesscode.Commentable:From.Finisher.AddComment.Definition) < proto
 
     formElementType = 'Breadlesscode.Commentable:From.Finisher.AddComment'
 }
+# added alias for backward compability 
+prototype(Breadlesscode.Commentable:From.Finisher.AddComment.Definition) < prototype(Breadlesscode.Commentable:Form.Finisher.AddComment.Definition)
