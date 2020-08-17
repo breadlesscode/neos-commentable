@@ -4,7 +4,7 @@
     "name": "breadlesscode/neos-commentable",
     "require": {
         "neos/flow": "*",
-        "neos/neos": "~4.0",
+        "neos/neos": "~5.0 || ~4.0",
         "neos/form-builder": "~1.0"
     },
     "autoload": {
